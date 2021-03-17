@@ -141,11 +141,16 @@ a{
 /* main */
 .main{
     background-color: var(--second);
-    height: 100vh;
+    
 }
 
 .book{
     background-color: white;
+    margin: 0.5rem 0;
+}
+
+.lastBook{
+    order: 1;
 }
 
 .book img{

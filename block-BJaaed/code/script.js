@@ -1,4 +1,4 @@
-{
+let allBooks={
     books: [
       {
         isbn: "9781593275846",
@@ -115,4 +115,35 @@
         website: "https://shichuan.github.io/javascript-patterns/",
       },
     ],
-  }
+  };
+
+/* <section class="books container padding justify-between wrap flex">
+          <div class="flex column book items-center padding flex-30">
+            <img class="full-width" src="https://eloquentjavascript.net/img/cover.jpg" alt="">
+            <p class="title">Eloquent JavaScript, Second Edition</p>
+            <p>Author: Margin Hipp</p>
+            <a href="" class="btn">Buy Now</a>
+          </div>
+        </section> */
+  let section= document.querySelector('.books');
+  allBooks.books.forEach((book)=>{
+    let div = document.createElement('div');
+    div.classList.add("flex", "column", "book", "items-center", "padding", "flex-30");
+    if(book.author== "Shi Chuan"){
+        div.classList.add("lastBook")
+    }
+    let img = document.createElement('img');
+    img.classList.add("full-width");
+    img.src = book.image;
+    let p1= document.createElement('p');
+    p1.classList.add("title");
+    p1.innerText= book.title;
+    let p2= document.createElement('p');
+    p2.innerText= `Author: ${book.author}`;
+    let a= document.createElement('a');
+    a.classList.add('btn');
+    a.href=book.website;
+    a.innerText= "Buy Now"
+    div.append(img,p1,p2,a);
+    section.append(div);
+});
