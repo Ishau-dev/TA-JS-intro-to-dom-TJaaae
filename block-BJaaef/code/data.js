@@ -337,5 +337,26 @@ let got = {
 <button class="btn"><a href="">Learn More!</a></button>
 
 </div> */
-
-let people= got.houses.map(house => house.people)
+let rootElement= document.querySelector('.persons');
+let allpeople = got.houses.reduce((acc,cv) => {acc= acc.concat(cv.people); return acc;},[]);
+allpeople.forEach(got =>{
+let divParent = document.createElement('div');
+divParent.classList.add("person", "margin-card", "center", "flex-30");
+let divChild = document.createElement('div');
+divChild.classList.add("flex","items-center");
+let img = document.createElement('img');
+img.src= got.image; 
+let h2= document.createElement('h2');
+h2.innerText=got.name;
+divChild.append(img,h2);
+let p = document.createElement('p');
+p.innerText=got.description;
+let button= document.createElement('button');
+button.classList.add('btn');
+let a= document.createElement('a');
+a.href= got.wikiLink;
+a.innerText="Learn More!"
+button.append(a);
+divParent.append(divChild,p,button);
+rootElement.append(divParent);
+});
