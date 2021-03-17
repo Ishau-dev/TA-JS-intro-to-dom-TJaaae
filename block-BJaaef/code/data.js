@@ -326,3 +326,16 @@ let got = {
     },
   ],
 };
+
+
+/* <div class="person  padding center flex-30">
+<div class="flex items-center ">
+  <img class="" src="https://raw.githubusercontent.com/nnnkit/json-data-collections/master/game-of-thrones/game-of-thrones-eddard-stark.jpg" alt="">
+  <h2>Eddard "Ned" Stark</h2>
+</div>
+<p>description sre hdjjd</p>
+<button class="btn"><a href="">Learn More!</a></button>
+
+</div> */
+
+let people= got.houses.map(house => house.people)
