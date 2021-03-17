@@ -154,6 +154,9 @@ a{
     padding: 1rem;
 }
 
+.margin-card{
+    margin: 1rem 0;
+}
 .person img{
     border-radius: 50%;
     border: 0.2rem solid green;
